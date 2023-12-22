@@ -1,0 +1,24 @@
+# quick run
+run.ps1
+
+#IDE config
+.idea
+.vscode
+
+#pycharm config
+.ipynb_checkpoints
+/web/upload/*.png
+/web/upload/*.jpg
+/web/upload/*.jpeg
+.idea
+
+/web/result/*.png
+/QRgenerator/QR.png
+
+
+# image
+# imageDatabase/outputImages/*
+LSB_QRcode/outputImages/*
+LSB_QRcode/outputImages/QRcode/*
+/imageDatabase/
+/models/

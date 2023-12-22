@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>隱寫資訊</title>
+  <style>
+    /* 在這裡放置您的 CSS 美化網站的樣式 */
+
+    /* 這裡是一個簡單的例子 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    /* 其他的 CSS 樣式可以在這裡添加 */
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>隱寫資訊</h1>
+  <form action="/make" method="POST" enctype="multipart/form-data">
+    <label for="options">請選擇隱寫方式：</label>
+    <select id="options" name="type">
+        <option value="" selected disabled>請選擇一種隱寫方法</option>
+        <option value="LSB隱寫文字">LSB 隱寫文字</option>
+        <option value="LSB QRcode">LSB 隱寫 QRcode</option>
+        <option value="Photoshop QRcode">Photoshop 隱寫 QRcode</option>
+    </select>
+
+    <div id="textUpload" style="display: none;">
+      <input type="file" id="imageUpload" name="image">
+      <input type="text" id="textInput" name="hidden_text" placeholder="請輸入文字">
+    </div>
+
+    <div id="qrcodeUploads" style="display: none;">
+      <input type="file" id="imageUpload1" name="image1">
+      <input type="file" id="imageUpload2" name="image2">
+    </div>
+
+    <button type="submit">送出</button>
+  </form>
+</div>
+
+<script>
+  const options = document.getElementById('options');
+  const textUpload = document.getElementById('textUpload');
+  const qrcodeUploads = document.getElementById('qrcodeUploads');
+
+  options.addEventListener('change', function() {
+    if (options.value === 'LSB隱寫文字') {
+      textUpload.style.display = 'block';
+      qrcodeUploads.style.display = 'none';
+    } else if (options.value === 'LSB QRcode' || options.value === 'Photoshop QRcode') {
+      textUpload.style.display = 'none';
+      qrcodeUploads.style.display = 'block';
+    } else {
+      textUpload.style.display = 'none';
+      qrcodeUploads.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>

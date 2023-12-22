@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Project_Steganography</title>
+    </head>
+    <body>
+        <h1>Project_Steganography</h1>
+        <div class = "show_result">
+            <p>原始照片:</p>
+            <img src = {{ origin_filename }} alt = "result" width="500" height="500">
+            <p>隱寫後的照片:</p>
+            <img src = {{ filename }} alt = "result" width="500" height="500">
+            <!-- download -->
+            <form action = "/download" method = "POST">
+                <input type="submit" value="download">
+            </form>
+        </div>
+    </body>
+</html>

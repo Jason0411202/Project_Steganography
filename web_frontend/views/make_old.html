@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+     <!-- Custom styles -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,600" rel="stylesheet">
+
+    <!-- Ionic icons -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/ionicons/4.5.5/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/static/images/favicon.png" />
+
+    <title>Mobile App | Themes Bootstrap</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="/static/images/logo-dark.svg" class="logo-navbar"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="icon ion-md-menu"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/detection">檢測圖片隱寫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/make">製作隱寫圖片</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="intro" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="heading-block">
+                        <h1>隱寫圖片製作</h1>
+                        <p>選擇隱寫的方式</p>
+                        <!-- <form action="/make" method="post" enctype="multipart/form-data">
+                            <select name="type" class="dropdown">
+                                <option value="LSB_text" class="dropdown-item">LSB隱寫文字</option>
+                                <option value="LSB_QRcode" class="dropdown-item">LSB隱寫QR code</option>
+                                <option value="photoshop" class="dropdown-item">photoshop隱寫圖片</option>
+                            </select>
+                        </form> -->
+                        
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              請選擇隱寫方式
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#" id="dropdown-item" onclick="select(this)">請選擇隱寫方式</a>
+                                <a class="dropdown-item" href="#" id="dropdown-item" onclick="select(this)">LSB隱寫文字</a>
+                                <a class="dropdown-item" href="#" id="dropdown-item" onclick="select(this)">LSB隱寫QR code</a>
+                                <a class="dropdown-item" href="#" id="dropdown-item" onclick="select(this)">photoshop隱寫圖片</a>
+                            </div>
+                        </div>
+                        
+                        <div id="uploadFile-group">
+                            <input type="file" id="uploadFile1" style="display: none;">
+                            <input type="file" id="uploadFile2" style="display: none;">
+
+                            <div class="topmargin-sm" style="display: none;" id="LSB_text">
+                                <div class="form-group">
+                                    <label>上傳要隱寫的圖片</label>
+                                    <a href="#" class="primary-btn" onclick="upload1()">選擇檔案</a>
+                                </div>
+                                <div class="form-group">
+                                    <label>輸入要隱寫的文字</label>
+                                    <input type="text" class="form-control" id="image_text" placeholder="輸入文字">
+                                </div>
+                            </div>
+    
+                            <div class="topmargin-sm" style="display: none;" id="LSB_QRcode">
+                                <div class="form-group">
+                                    <label>上傳要隱寫的圖片</label>
+                                    <a href="#" class="primary-btn" onclick="upload1()">選擇檔案</a>
+                                </div>
+                                <div class="form-group">
+                                    <label>上傳QRcode圖片</label>
+                                    <a href="#" class="primary-btn" onclick="upload2()">選擇檔案</a>
+                                </div>
+                            </div>
+    
+                            <div class="topmargin-sm" style="display: none;" id="photoshop">
+                                <div class="form-group">
+                                    <label>上傳要隱寫的圖片</label>
+                                    <a href="#" class="primary-btn" onclick="upload1()">選擇檔案</a>
+                                </div>
+                                <div class="form-group">
+                                    <label>上傳要隱藏的圖片</label>
+                                    <a href="#" class="primary-btn" onclick="upload2()">選擇檔案</a>
+                                </div>
+                            </div>
+                            <div div class="topmargin-sm">
+                                <div class="form-group">
+                                    <a href="#" class="primary-btn" onclick="send()">送出</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+                <!-- <div class="col-4">
+                    <div class="heading-block">
+                        <h2>原圖</h2>
+                        <img src="/static/images/LSB_Text.jpg" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="heading-block">
+                        <h2>處理後的圖片</h2>
+                        <img src="/static/images/LSB_Text_Written.jpg" class="img-fluid" id="result">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.3.1/jquery.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        function upload1(){
+            document.getElementById("uploadFile1").click();
+        }
+
+        function upload2(){
+            document.getElementById("uploadFile2").click();
+        }
+
+        function select(e){
+            // 先將所有選項隱藏
+            document.getElementById("LSB_text").style.display = 'none';
+            document.getElementById("LSB_QRcode").style.display = 'none';
+            document.getElementById("photoshop").style.display = 'none';
+            
+            var x = e.textContent;
+            document.getElementById("dropdownMenuButton").textContent = x;
+
+            if(x == "LSB隱寫文字"){
+                document.getElementById("LSB_text").style.display = '';
+            }else if(x == "LSB隱寫QR code"){
+                document.getElementById("LSB_QRcode").style.display = '';
+            }else if(x == "photoshop隱寫圖片"){
+                document.getElementById("photoshop").style.display = '';
+            }
+        }
+
+        function send(){
+            var fileData = new FormData(); // 建立一個 FormData 物件
+
+            var type = document.getElementById("dropdownMenuButton").textContent;
+            fileData.append('type', type); // 將隱寫方式加入 FormData
+
+            var img = document.getElementById("uploadFile1").files[0];
+            fileData.append('image', img); // 將圖片檔案加入 FormData
+
+            var hiddenText = document.getElementById("image_text").value;
+            fileData.append('hidden_text', hiddenText); // 將文字加入 FormData
+
+            // 建立 XMLHttpRequest 物件
+            var xhr = new XMLHttpRequest();
+
+            // 開啟一個 POST 連線到指定的 URL
+            xhr.open('POST', '/make', true);
+
+            // 定義當傳送完成時的動作
+            xhr.onload = function() {
+                // 處理回應的動作
+                if (xhr.status === 200) {
+                    // 處理成功的回應
+                    console.log('成功送出資料！');
+                } else {
+                    // 處理錯誤的回應
+                    console.error('資料傳送失敗：', xhr.statusText);
+                }
+            };
+
+            // 發送資料
+            xhr.send(fileData);
+
+            function refreshPage() {
+                location.reload(); // 重新載入當前頁面
+            }
+
+            // 設置每五秒執行一次刷新頁面的動作
+            //setInterval(refreshPage, 5000); // 刷新間隔為 5000 毫秒 (5 秒)
+        }
+
+    </script>
+</body>
+
+</html>

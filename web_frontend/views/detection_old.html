@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+     <!-- Custom styles -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,600" rel="stylesheet">
+
+    <!-- Ionic icons -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/ionicons/4.5.5/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/static/images/favicon.png" />
+
+    <title>Mobile App | Themes Bootstrap</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="/static/images/logo-dark.svg" class="logo-navbar"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="icon ion-md-menu"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/detection">檢測圖片隱寫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/make">製作隱寫圖片</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="intro" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <div class="heading-block">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h1>圖片隱寫檢測</h1>
+                        <div class="topmargin-lg">
+                            <input type="file" id="uploadFile" style="display: none;" onchange="represent()">
+                            <label>選擇要檢測的圖片</label>
+                            <a href="#" class="primary-btn" onclick="upload()">上傳檔案</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="heading-block" style="display: none;" id="result">
+                        <h2>檢測結果</h2>
+                        <img src="./MOTHERv3.png" class="img-fluid" id="resultImage">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.3.1/jquery.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        function upload(){
+            document.getElementById("uploadFile").click();
+        }
+        function represent(){
+            var img = document.getElementById("uploadFile").files[0];
+            document.getElementById("resultImage").src = URL.createObjectURL(img);
+            document.getElementById("result").style.display = '';
+        }
+    </script>
+</body>
+
+</html>
