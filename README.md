@@ -1,8 +1,9 @@
 # 應用深度學習於常見多媒體隱寫術的安全性分析
 
+* 本專案參與了International ICT Innovative Services Awards 2023 並且進入決賽
 * 本專案旨在探索如何應用深度學習技術進行常見多媒體隱寫術的安全性分析。
 * 隱寫術是一種將秘密信息隱藏在其他非關鍵性資訊中的技術。
 * 我們開發了一個深度學習模型，可以用於檢測和分析這些隱寫術技術，並評估其安全性。
-* 本專案參與了International ICT Innovative Services Awards 2023 並且進入決賽
+
 
 
