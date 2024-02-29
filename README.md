@@ -6,5 +6,4 @@
 * 我們開發了多種不同的深度學習模型，可以用於檢測圖片是否被隱寫以及利用多種模型去分析圖片的隱寫技術
 
 ## DEMO
-
 [https://www.youtube.com/watch?v=FvurB54ymGI](https://www.youtube.com/watch?v=FvurB54ymGI)
