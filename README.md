@@ -7,4 +7,4 @@
 
 ## DEMO
 
-[![DEMO](https://www.youtube.com/watch?v=FvurB54ymGI/0.jpg)](https://www.youtube.com/watch?v=FvurB54ymGI "Unity Snake Game")
+[https://www.youtube.com/watch?v=FvurB54ymGI](https://www.youtube.com/watch?v=FvurB54ymGI)
